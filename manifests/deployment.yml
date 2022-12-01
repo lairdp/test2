@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: lairdptest 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lairdptest
+  template:
+    metadata:
+      labels:
+        app: lairdptest 
+    spec:
+      containers:
+        - name: lairdptest 
+          image: labo5test.azurecr.io/lairdptest
+          ports:
+          - containerPort: 80
